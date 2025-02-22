@@ -9,7 +9,7 @@
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
       background: #fafafa;
       color: #4a200d;
       line-height: 1.6;
@@ -127,25 +127,7 @@
       transition: transform 0.3s;
     }
     .product img:hover { transform: scale(1.05); }
-    /* Flavours Buttons (for product flavours) */
-    .flavour-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .flavour-buttons a {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #2e6c51;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-    .flavour-buttons a:hover { background-color: #4a200d; }
-    /* Recipes Section */
+    /* Recipes Section on Main Page */
     #recipes {
       background: url('recipes-bg.jpg') center/cover no-repeat;
       padding: 40px 20px;
@@ -168,6 +150,24 @@
     }
     .recipe-card h3 { margin-top: 0; }
     .recipe-card ol { margin-left: 20px; }
+    /* Flavours Section – Only Here (after Recipes) */
+    .flavour-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .flavour-buttons a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #2e6c51;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .flavour-buttons a:hover { background-color: #4a200d; }
     /* About Us Section */
     #about {
       padding: 40px 20px;
@@ -176,40 +176,17 @@
     #about p {
       font-size: 1.2em;
     }
-    /* Team Section */
+    /* Team Section on Main Page – Company Info Only */
     #profiles {
       padding: 40px 20px;
-    }
-    #profiles p.founded {
       text-align: center;
+    }
+    #profiles p {
       font-size: 1.1em;
       margin-bottom: 20px;
     }
-    .profile {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .profile:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    .profile img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 20px;
-    }
     .team-button {
-      display: block;
+      display: inline-block;
       width: 200px;
       margin: 20px auto;
       padding: 10px 20px;
@@ -276,8 +253,6 @@
     @media (max-width: 768px) {
       nav a { margin: 0 10px; font-size: 0.9em; }
       .product { min-width: 260px; padding: 15px; }
-      .profile { flex-direction: column; align-items: center; text-align: center; }
-      .profile img { margin: 0 0 10px; }
     }
   </style>
 </head>
@@ -309,24 +284,14 @@
         <div class="product">
           <h3>RYANS INSTANT PORRIDGE</h3>
           <p><em>"Quick, Nutritious and Delicious"</em></p>
-          <p>Ready-to-use porridge blend designed for quick preparation without compromising nutrition.</p>
+          <p>Ready-to-use porridge blend for fast, wholesome meals.</p>
           <img src="instant-porridge.jpg" alt="Ryan's Instant Porridge">
         </div>
         <div class="product">
           <h3>RYAN’S HIGH FIBRE PORRIDGE FLOUR</h3>
           <p><em>"High fiber, better digestion!"</em></p>
-          <p>Crafted for those needing a fiber-rich diet to support digestion and overall well-being.</p>
+          <p>Crafted for a fiber-rich diet that supports digestion.</p>
           <img src="high-fiber-porridge.jpg" alt="Ryan's High Fibre Porridge Flour">
-        </div>
-      </div>
-      <div>
-        <h3>Try Our Flavours</h3>
-        <div class="flavour-buttons">
-          <a href="recipes.html">Lemorific</a>
-          <a href="recipes.html">Coconutrific</a>
-          <a href="recipes.html">Banarific</a>
-          <a href="recipes.html">Chocorific</a>
-          <a href="recipes.html">Nutrific</a>
         </div>
       </div>
     </section>
@@ -340,7 +305,7 @@
           <ol>
             <li>Add 4 tablespoons of flour to a cup or bowl.</li>
             <li>Slowly add cold water (less than half a cup) and stir until a smooth paste forms.</li>
-            <li>Gradually pour in hot water (or hot milk) while stirring until desired thickness is reached.</li>
+            <li>Gradually pour in hot water or milk while stirring until desired thickness is reached.</li>
             <li>Add your favorite sweetener or flavor.</li>
             <li>Your porridge is ready to enjoy!</li>
           </ol>
@@ -356,7 +321,8 @@
           </ol>
         </div>
       </div>
-      <h3>Try Our Flavour Variations</h3>
+      <!-- Flavours Buttons (only once, after recipes) -->
+      <h3>Try Our Flavours</h3>
       <div class="flavour-buttons">
         <a href="recipes.html">Lemorific</a>
         <a href="recipes.html">Coconutrific</a>
@@ -369,55 +335,13 @@
     <!-- About Us Section -->
     <section id="about">
       <h2>About Us</h2>
-      <p>At James & Ben, we specialize in high-quality food products for nutrition, convenience, and excellence. Founded in 2018 by Kagwima Benson, our company has been dedicated to bringing innovative and premium quality porridge solutions to your table.</p>
+      <p>At James &amp; Ben, we are committed to quality, innovation, and teamwork. Founded in 2018 by Kagwima Benson, our mission is to deliver premium porridge flours that nourish and inspire. We believe in the power of collaboration and excellence.</p>
     </section>
     
-    <!-- Team Section -->
+    <!-- Team Section (Main Page – Company Info Only) -->
     <section id="profiles">
       <h2>Our Team</h2>
-      <p class="founded">Founded in 2018 by Kagwima Benson</p>
-      <div class="profile">
-        <img src="team1.jpg" alt="Kagwima Benson">
-        <div>
-          <h3>Kagwima Benson - CEO</h3>
-          <p>Experienced in product development and food safety. A visionary founder passionate about innovation and quality.</p>
-        </div>
-      </div>
-      <div class="profile">
-        <div>
-          <h3>Elvis Kuboka - Quality Director</h3>
-          <p>A food technologist with extensive experience in processing and quality assurance.</p>
-          <p>Contact: 0114403588 | rielkub@gmail.com</p>
-        </div>
-      </div>
-      <div class="profile">
-        <div>
-          <h3>James Kamau Maina - Finance Director</h3>
-          <p>Over 3 years in financial management for startup companies.</p>
-          <p>Contact: 0796294401 | maina2966@gmail.com</p>
-        </div>
-      </div>
-      <div class="profile">
-        <div>
-          <h3>Isaac Kipngeny Ronoh - Sales & Purchase Director</h3>
-          <p>Expert in quality assurance and management systems with strategic sales insight.</p>
-          <p>Contact: 0717777218 | isaacronoh23@gmail.com</p>
-        </div>
-      </div>
-      <div class="profile">
-        <div>
-          <h3>Antony Muturi Njoroge – Head Production & HR</h3>
-          <p>Dedicated to operational efficiency and human resource management.</p>
-          <p>Contact: 0757774765 | antonymuturinjoroge@gmail.com</p>
-        </div>
-      </div>
-      <div class="profile">
-        <div>
-          <h3>Tracy Ayieko – Head Marketing and IT</h3>
-          <p>Innovative leader in digital marketing and IT, driving brand growth with creative strategies.</p>
-          <p>Contact: 0793854029 | teey.soln@gmail.com</p>
-        </div>
-      </div>
+      <p>Our success is built on teamwork and a shared vision. Led by CEO Kagwima Benson, our dedicated team works relentlessly to bring you the best in nutrition and innovation.</p>
       <a href="team.html" class="team-button">Our Team</a>
     </section>
     
@@ -440,7 +364,7 @@
   
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 James & Ben Enterprises. All rights reserved.</p>
+    <p>&copy; 2025 James &amp; Ben Enterprises. All rights reserved.</p>
   </footer>
   
   <script>
