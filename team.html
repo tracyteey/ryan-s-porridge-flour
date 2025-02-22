@@ -8,7 +8,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
-      background: #fafafa;
+      background: #ffffff;
       color: #4a200d;
       line-height: 1.6;
       padding: 20px;
@@ -35,24 +35,50 @@
     h2 {
       color: #2e6c51;
       margin-bottom: 20px;
+      border-bottom: 2px solid #e9bb10;
+      padding-bottom: 10px;
     }
+    /* Company Info Section (on team page) */
+    .company-info {
+      background: #ffffff;
+      border: 2px solid #e9bb10;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+    .company-info p {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+    /* Team Members with Photos */
     .team-member {
-      background: #e9bb10;
+      background: #ffffff;
+      border: 2px solid #e9bb10;
       padding: 20px;
       border-radius: 10px;
       margin-bottom: 20px;
-    }
-    /* CEO gets a picture; others do not */
-    .ceo {
       display: flex;
-      align-items: center;
       gap: 20px;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    .ceo img {
+    .team-member img {
       width: 120px;
       height: 120px;
-      border-radius: 50%;
       object-fit: cover;
+      border-radius: 50%;
+    }
+    .member-info {
+      flex: 1;
+    }
+    /* Other Team Members (text only) */
+    .team-details {
+      background: #ffffff;
+      border: 2px solid #e9bb10;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     .learn-more {
       display: inline-block;
@@ -70,37 +96,55 @@
 <body>
   <header>
     <a href="index.html" class="back-arrow">&larr; Back</a>
-    <h1>Our Extended Team</h1>
+    <h1>Our Team</h1>
   </header>
   <div class="container">
-    <h2>Meet Our Team</h2>
-    <div class="team-member ceo">
+    <!-- Company Information Section -->
+    <div class="company-info">
+      <h2>About Our Company</h2>
+      <p>Founded in 2018 by Kagwima Benson, James &amp; Ben Enterprises thrives on innovation, quality, and teamwork.</p>
+      <p>We believe that our success is driven by our commitment to excellence and the collaborative spirit of our team.</p>
+      <p><strong>CEO:</strong> Kagwima Benson</p>
+    </div>
+    
+    <!-- Team Members with Photos -->
+    <div class="team-member">
       <img src="team1.jpg" alt="Kagwima Benson - CEO">
-      <div>
-        <h3>Kagwima Benson - CEO</h3>
-        <p>Kagwima Benson, founder of James &amp; Ben Enterprises (established in 2018), leads our team with vision and dedication.</p>
+      <div class="member-info">
+        <h2>Kagwima Benson - CEO</h2>
+        <p>Our founder and visionary leader who established the company in 2018. His commitment to quality and innovation drives the entire team.</p>
       </div>
     </div>
     <div class="team-member">
-      <h3>Elvis Kuboka - Quality Director</h3>
-      <p>Elvis has over 5 years of experience in food processing and quality assurance, ensuring our products meet the highest standards.</p>
+      <img src="team2.jpg" alt="Product Manager">
+      <div class="member-info">
+        <h2>Product Manager</h2>
+        <p>Responsible for overseeing product development and ensuring our porridge flours meet the highest standards.</p>
+      </div>
     </div>
-    <div class="team-member">
-      <h3>James Kamau Maina - Finance Director</h3>
-      <p>With expertise in financial management, James drives our company's growth and stability.</p>
+    
+    <!-- Other Team Members (Text Only) -->
+    <div class="team-details">
+      <h2>Quality Director</h2>
+      <p>Elvis Kuboka brings over 5 years of experience in food processing and quality assurance.</p>
     </div>
-    <div class="team-member">
-      <h3>Isaac Kipngeny Ronoh - Sales &amp; Purchase Director</h3>
-      <p>Isaac brings strategic insight and extensive experience in quality assurance and sales management.</p>
+    <div class="team-details">
+      <h2>Finance Director</h2>
+      <p>James Kamau Maina drives financial strategy and supports our growth initiatives.</p>
     </div>
-    <div class="team-member">
-      <h3>Antony Muturi Njoroge – Head Production &amp; HR</h3>
-      <p>Antony is dedicated to operational efficiency and human resource management, ensuring smooth production processes.</p>
+    <div class="team-details">
+      <h2>Sales &amp; Purchase Director</h2>
+      <p>Isaac Kipngeny Ronoh leverages his expertise to manage strategic partnerships and sales operations.</p>
     </div>
-    <div class="team-member">
-      <h3>Tracy Ayieko – Head Marketing and IT</h3>
-      <p>Tracy drives our digital presence with creative strategies and expertise in web design and marketing.</p>
+    <div class="team-details">
+      <h2>Head Production &amp; HR</h2>
+      <p>Antony Muturi Njoroge ensures operational efficiency and nurtures our human resources.</p>
     </div>
+    <div class="team-details">
+      <h2>Head Marketing and IT</h2>
+      <p>Tracy Ayieko spearheads our digital presence and innovative marketing strategies.</p>
+    </div>
+    
     <a href="index.html" class="learn-more">Return Home</a>
   </div>
 </body>
