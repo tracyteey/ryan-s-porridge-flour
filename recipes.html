@@ -8,7 +8,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
-      background: #fafafa;
+      background: #ffffff;
       color: #4a200d;
       line-height: 1.6;
       padding: 20px;
@@ -34,20 +34,22 @@
     }
     h2 {
       color: #2e6c51;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e9bb10;
+      padding-bottom: 10px;
     }
-    .recipe-section {
-      margin-bottom: 30px;
-    }
+    /* Recipe Cards – White cards with accent borders */
     .recipe-card {
-      background: #e9bb10;
+      background: #ffffff;
+      border: 2px solid #e9bb10;
       padding: 20px;
       border-radius: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     .recipe-card img {
       width: 150px;
@@ -55,10 +57,10 @@
       object-fit: cover;
       border-radius: 10px;
     }
-    .recipe-card .recipe-content {
+    .recipe-content {
       flex: 1;
     }
-    .recipe-card ol {
+    .recipe-content ol {
       margin-left: 20px;
     }
     .learn-more {
@@ -72,6 +74,12 @@
       transition: background-color 0.3s;
     }
     .learn-more:hover { background: #4a200d; }
+    /* Section Headings */
+    .section-heading {
+      margin: 30px 0 20px;
+      color: #2e6c51;
+      font-size: 1.8em;
+    }
   </style>
 </head>
 <body>
@@ -81,94 +89,91 @@
   </header>
   <div class="container">
     <h2>Main Recipes</h2>
-    <div class="recipe-section">
-      <div class="recipe-card">
-        <img src="instant-porridge.jpg" alt="Instant Porridge">
-        <div class="recipe-content">
-          <h3>Ryan's Instant Porridge Recipe</h3>
-          <ol>
-            <li>Add 4 tablespoons of flour to a cup or bowl.</li>
-            <li>Slowly add cold water (less than half a cup) and stir until a smooth paste forms.</li>
-            <li>Gradually pour in hot water or milk while stirring until desired thickness is reached.</li>
-            <li>Add your favorite sweetener or flavor.</li>
-            <li>Your porridge is ready to enjoy!</li>
-          </ol>
-        </div>
-      </div>
-      <div class="recipe-card">
-        <img src="high-fiber-porridge.jpg" alt="High Fibre Porridge">
-        <div class="recipe-content">
-          <h3>Ryan's High Fibre Porridge Recipe (2 servings)</h3>
-          <ol>
-            <li>Mix 4 tablespoons of porridge flour with 1 cup of cold water to form a paste.</li>
-            <li>Boil 2 cups of water or milk.</li>
-            <li>Add the paste while stirring on low heat.</li>
-            <li>Cook for 7–10 minutes, stirring occasionally.</li>
-            <li>Sweeten to taste and serve hot.</li>
-          </ol>
-        </div>
+    <div class="recipe-card">
+      <img src="instant-porridge.jpg" alt="Instant Porridge">
+      <div class="recipe-content">
+        <h3>Ryan's Instant Porridge Recipe</h3>
+        <ol>
+          <li>Add 4 tablespoons of flour to a cup or bowl.</li>
+          <li>Slowly add cold water until a smooth paste forms.</li>
+          <li>Gradually pour in hot water or milk while stirring until desired thickness is reached.</li>
+          <li>Add your favorite sweetener or flavor.</li>
+          <li>Your porridge is ready to enjoy!</li>
+        </ol>
       </div>
     </div>
-    <h2>Flavour Variations</h2>
-    <div class="recipe-section">
-      <div class="recipe-card">
-        <img src="lemorific.jpg" alt="Lemorific">
-        <div class="recipe-content">
-          <h3>Lemorific (Lemon Twist)</h3>
-          <ol>
-            <li>Prepare your base porridge recipe.</li>
-            <li>Add 1 teaspoon of lemon zest and 1 tablespoon of fresh lemon juice.</li>
-            <li>Mix in a drizzle of honey.</li>
-            <li>Garnish with mint leaves and serve warm.</li>
-          </ol>
-        </div>
+    <div class="recipe-card">
+      <img src="high-fiber-porridge.jpg" alt="High Fibre Porridge">
+      <div class="recipe-content">
+        <h3>Ryan's High Fibre Porridge Recipe (2 servings)</h3>
+        <ol>
+          <li>Mix 4 tablespoons of porridge flour with 1 cup of cold water to form a paste.</li>
+          <li>Boil 2 cups of water or milk.</li>
+          <li>Add the paste while stirring on low heat.</li>
+          <li>Cook for 7–10 minutes, stirring occasionally.</li>
+          <li>Sweeten to taste and serve hot.</li>
+        </ol>
       </div>
-      <div class="recipe-card">
-        <img src="coconutrific.jpg" alt="Coconutrific">
-        <div class="recipe-content">
-          <h3>Coconutrific (Creamy Coconut)</h3>
-          <ol>
-            <li>Prepare your base porridge recipe.</li>
-            <li>Stir in 1/4 cup of coconut milk and 2 tablespoons of shredded coconut.</li>
-            <li>Add a dash of vanilla extract and a pinch of salt.</li>
-            <li>Top with toasted coconut flakes.</li>
-          </ol>
-        </div>
+    </div>
+    
+    <h2 class="section-heading">Flavour Variations</h2>
+    <div class="recipe-card">
+      <img src="lemorific.jpg" alt="Lemorific">
+      <div class="recipe-content">
+        <h3>Lemorific (Lemon Twist)</h3>
+        <ol>
+          <li>Prepare your base porridge recipe.</li>
+          <li>Add 1 teaspoon of lemon zest and 1 tablespoon of fresh lemon juice.</li>
+          <li>Mix in a drizzle of honey.</li>
+          <li>Garnish with mint leaves and serve warm.</li>
+        </ol>
       </div>
-      <div class="recipe-card">
-        <img src="banarific.jpg" alt="Banarific">
-        <div class="recipe-content">
-          <h3>Banarific (Banana Bliss)</h3>
-          <ol>
-            <li>Mash one ripe banana and mix into your prepared porridge.</li>
-            <li>Add a pinch of cinnamon and a drizzle of maple syrup or honey.</li>
-            <li>Top with banana slices and chopped walnuts.</li>
-          </ol>
-        </div>
+    </div>
+    <div class="recipe-card">
+      <img src="coconutrific.jpg" alt="Coconutrific">
+      <div class="recipe-content">
+        <h3>Coconutrific (Creamy Coconut)</h3>
+        <ol>
+          <li>Prepare your base porridge recipe.</li>
+          <li>Stir in 1/4 cup of coconut milk and 2 tablespoons of shredded coconut.</li>
+          <li>Add a dash of vanilla extract and a pinch of salt.</li>
+          <li>Top with toasted coconut flakes.</li>
+        </ol>
       </div>
-      <div class="recipe-card">
-        <img src="chocorific.jpg" alt="Chocorific">
-        <div class="recipe-content">
-          <h3>Chocorific (Cocoa Delight)</h3>
-          <ol>
-            <li>Prepare your base porridge recipe.</li>
-            <li>Mix in 1 tablespoon of cocoa powder and a handful of chocolate chips.</li>
-            <li>Add a small pinch of salt.</li>
-            <li>Stir well and serve with whipped cream if desired.</li>
-          </ol>
-        </div>
+    </div>
+    <div class="recipe-card">
+      <img src="banarific.jpg" alt="Banarific">
+      <div class="recipe-content">
+        <h3>Banarific (Banana Bliss)</h3>
+        <ol>
+          <li>Mash one ripe banana and mix into your prepared porridge.</li>
+          <li>Add a pinch of cinnamon and a drizzle of maple syrup or honey.</li>
+          <li>Top with banana slices and chopped walnuts.</li>
+        </ol>
       </div>
-      <div class="recipe-card">
-        <img src="nutrific.jpg" alt="Nutrific">
-        <div class="recipe-content">
-          <h3>Nutrific (Nutty Boost)</h3>
-          <ol>
-            <li>Prepare your base porridge recipe.</li>
-            <li>Fold in 2 tablespoons each of chopped nuts and seeds.</li>
-            <li>Add a handful of dried fruits (raisins or cranberries).</li>
-            <li>Mix thoroughly and serve.</li>
-          </ol>
-        </div>
+    </div>
+    <div class="recipe-card">
+      <img src="chocorific.jpg" alt="Chocorific">
+      <div class="recipe-content">
+        <h3>Chocorific (Cocoa Delight)</h3>
+        <ol>
+          <li>Prepare your base porridge recipe.</li>
+          <li>Mix in 1 tablespoon of cocoa powder and a handful of chocolate chips.</li>
+          <li>Add a small pinch of salt.</li>
+          <li>Stir well and serve with whipped cream if desired.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="recipe-card">
+      <img src="nutrific.jpg" alt="Nutrific">
+      <div class="recipe-content">
+        <h3>Nutrific (Nutty Boost)</h3>
+        <ol>
+          <li>Prepare your base porridge recipe.</li>
+          <li>Fold in 2 tablespoons each of chopped nuts and seeds.</li>
+          <li>Add a handful of dried fruits (raisins or cranberries).</li>
+          <li>Mix thoroughly and serve.</li>
+        </ol>
       </div>
     </div>
     <a href="index.html" class="learn-more">Return Home</a>
