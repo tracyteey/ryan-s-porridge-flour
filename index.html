@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ryans Porridge Flours | James & Ben Enterprises</title>
   <style>
-    /* Global Reset & Styles */
+    /* Global Reset & Base Styles */
     * { box-sizing: border-box; }
     body {
       margin: 0;
@@ -15,16 +15,24 @@
       line-height: 1.6;
       scroll-behavior: smooth;
     }
+    /* Header with Background & Overlay */
     header {
-      background: url('header-bg.jpg') center/cover no-repeat;
-	  opacity 50%;
-      padding: 20px 10px;
-      text-align: center;
       position: relative;
+      text-align: center;
+      padding: 20px 10px;
       color: white;
-
+      background: url('header-bg.jpg') center/cover no-repeat;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(46, 108, 81, 0.6); /* primary color overlay */
+      z-index: 0;
     }
     .logo-container {
+      position: relative;
+      z-index: 1;
       display: inline-block;
       background: white;
       padding: 5px;
@@ -35,19 +43,24 @@
       max-height: 80px;
       display: block;
     }
-    /* Updated Header Text */
+    /* Header Text */
     header h1 {
+      position: relative;
+      z-index: 1;
       font-size: 2.8em;
-      color: #ffdc00; /* a standout gold shade */
+      color: #ffdc00; /* standout gold */
       margin: 10px 0 5px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
     header p {
+      position: relative;
+      z-index: 1;
       font-size: 1.2em;
       margin: 0;
       color: #fff;
       letter-spacing: 1px;
     }
+    /* Navigation Bar */
     nav {
       background-color: #e9bb10;
       padding: 10px;
@@ -85,19 +98,19 @@
       bottom: -5px;
       left: 0;
     }
-    /* Products Section Layout: Updated Carousel */
+    /* Products Section */
     .carousel {
       display: flex;
-      flex-wrap: wrap; /* Allows products to wrap onto a new line */
+      flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
     }
     .product {
-      background-color: #fff;
+      background: #fff;
       border: 1px solid #ddd;
       border-radius: 10px;
       padding: 20px;
-      flex: 1 1 300px; /* Flex items grow/shrink; minimum width 300px */
+      flex: 1 1 300px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
     }
@@ -167,28 +180,56 @@
       border-radius: 10px;
       transition: transform 0.3s;
     }
-    .recipe-images img:hover {
-      transform: scale(1.05);
-    }
+    .recipe-images img:hover { transform: scale(1.05); }
     /* Team Profiles */
     .profile {
-      background-color: #fff;
+      background: #fff;
       border: 1px solid #ddd;
       border-radius: 10px;
       padding: 20px;
       margin-bottom: 20px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      align-items: center;
     }
     .profile:hover {
       transform: translateY(-3px);
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-    a {
-      color: #2e6c51;
-      transition: color 0.3s;
+    .profile img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 20px;
     }
-    a:hover { color: #4a200d; }
+    /* Learn More Buttons */
+    .learn-more {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #2e6c51;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .learn-more:hover { background-color: #4a200d; }
+    /* Contact Section */
+    #contact a { text-decoration: none; }
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .social-icons a img {
+      width: 24px;
+      height: 24px;
+    }
+    /* Footer */
     footer {
       background: #2e6c51;
       color: white;
@@ -229,21 +270,23 @@
       .product { min-width: 260px; padding: 15px; }
       .flavors li { padding: 8px 12px; }
       .recipe-images img { width: 120px; height: 120px; }
+      .profile { flex-direction: column; align-items: center; text-align: center; }
+      .profile img { margin: 0 0 10px; }
     }
   </style>
 </head>
 <body>
-  <!-- Header with Updated Heading -->
+  <!-- Header -->
   <header>
     <div class="logo-container">
-      <!-- Replace "logo.png" with your actual logo file -->
+      <!-- Place logo.png in your folder -->
       <img src="logo.png" alt="James & Ben Enterprises Logo">
     </div>
     <h1>Ryans Porridge Flours</h1>
     <p>James & Ben Enterprises</p>
   </header>
-
-  <!-- Navigation Bar -->
+  
+  <!-- Navigation -->
   <nav>
     <a href="#products">Products</a>
     <a href="#recipes">Recipes</a>
@@ -251,21 +294,19 @@
     <a href="#profiles">Team</a>
     <a href="#contact">Contact</a>
   </nav>
-
-  <!-- Main Content Container -->
+  
+  <!-- Main Content -->
   <div class="container">
     <!-- Products Section -->
     <section id="products">
       <h2>Our Products</h2>
       <div class="carousel">
-        <!-- Ryan's Instant Porridge -->
         <div class="product">
           <h3>RYANS INSTANT PORRIDGE</h3>
           <p><em>"Quick, Nutritious and Delicious"</em></p>
           <p>Ready-to-use porridge blend designed for quick preparation without compromising nutrition. It’s the perfect solution for those who need a fast, wholesome meal option.</p>
           <img src="instant-porridge.jpg" alt="Ryan's Instant Porridge">
         </div>
-        <!-- Ryan's High Fibre Porridge -->
         <div class="product">
           <h3>RYAN’S HIGH FIBRE PORRIDGE FLOUR</h3>
           <p><em>"High fiber, better digestion!"</em></p>
@@ -273,7 +314,6 @@
           <img src="high-fiber-porridge.jpg" alt="Ryan's High Fibre Porridge Flour">
         </div>
       </div>
-      <!-- Flavors Section -->
       <div>
         <h3>Try Our Flavors</h3>
         <ul class="flavors">
@@ -285,12 +325,10 @@
         </ul>
       </div>
     </section>
-
+    
     <!-- Recipes Section -->
     <section id="recipes">
       <h2>Recipes</h2>
-      
-      <!-- Ryan's Instant Porridge Recipe -->
       <div class="recipe-card">
         <h3>Ryan's Instant Porridge Recipe</h3>
         <ol>
@@ -300,9 +338,8 @@
           <li>Add your favorite sweetener or flavor.</li>
           <li>Your porridge is ready to enjoy!</li>
         </ol>
+        <a href="recipes.html" class="learn-more">Learn More</a>
       </div>
-      
-      <!-- Ryan's High Fibre Porridge Recipe -->
       <div class="recipe-card">
         <h3>Ryan's High Fibre Porridge Recipe (2 servings)</h3>
         <ol>
@@ -312,118 +349,82 @@
           <li>Cook for 7–10 minutes, stirring occasionally.</li>
           <li>Sweeten to taste and serve hot.</li>
         </ol>
-      </div>
-      
-      <!-- Flavour Recipes -->
-      <div class="recipe-card">
-        <h3>Flavour Variations</h3>
-        <p>Enhance your porridge experience with these creative flavour recipes:</p>
-        
-        <h4>Lemorific (Lemon Twist)</h4>
-        <ol>
-          <li>Prepare your porridge as per the base recipe.</li>
-          <li>Add 1 teaspoon of lemon zest and 1 tablespoon of fresh lemon juice.</li>
-          <li>Mix in a drizzle of honey for extra sweetness.</li>
-          <li>Garnish with a few mint leaves and serve warm.</li>
-        </ol>
-        
-        <h4>Coconutrific (Creamy Coconut)</h4>
-        <ol>
-          <li>Prepare your porridge as usual.</li>
-          <li>Stir in 1/4 cup of coconut milk and 2 tablespoons of shredded coconut.</li>
-          <li>Add a dash of vanilla extract and a pinch of salt.</li>
-          <li>Top with toasted coconut flakes for crunch.</li>
-        </ol>
-        
-        <h4>Banarific (Banana Bliss)</h4>
-        <ol>
-          <li>Mash one ripe banana and mix into your prepared porridge.</li>
-          <li>Add a pinch of cinnamon and a drizzle of maple syrup or honey.</li>
-          <li>Top with banana slices and a sprinkle of chopped walnuts.</li>
-        </ol>
-        
-        <h4>Chocorific (Cocoa Delight)</h4>
-        <ol>
-          <li>Prepare your base porridge recipe.</li>
-          <li>Mix in 1 tablespoon of cocoa powder and a handful of chocolate chips.</li>
-          <li>Add a small pinch of salt to balance the cocoa flavour.</li>
-          <li>Stir well and serve with a dollop of whipped cream if desired.</li>
-        </ol>
-        
-        <h4>Nutrific (Nutty Boost)</h4>
-        <ol>
-          <li>Prepare your porridge as the base recipe.</li>
-          <li>Fold in a mixture of chopped nuts (almonds, walnuts) and seeds (chia, flaxseed) – about 2 tablespoons each.</li>
-          <li>Add a handful of dried fruits (raisins or cranberries) for extra texture.</li>
-          <li>Mix thoroughly and enjoy a nutritious twist!</li>
-        </ol>
-        
-        <div class="recipe-images">
-          <!-- Replace these with actual images for each flavour -->
-          <img src="lemorific.jpg" alt="Lemorific">
-          <img src="coconutrific.jpg" alt="Coconutrific">
-          <img src="banarific.jpg" alt="Banarific">
-          <img src="chocorific.jpg" alt="Chocorific">
-          <img src="nutrific.jpg" alt="Nutrific">
-        </div>
+        <a href="recipes.html" class="learn-more">Learn More</a>
       </div>
     </section>
-
+    
     <!-- About Us Section -->
     <section id="about">
       <h2>About Us</h2>
       <p>At James & Ben, we specialize in high-quality food products designed for nutrition, convenience, and excellence. Our goal is to bring innovation to your meals while ensuring premium quality and taste.</p>
     </section>
-
-    <!-- Team Profiles Section -->
+    
+    <!-- Team Section -->
     <section id="profiles">
       <h2>Our Team</h2>
       <div class="profile">
-        <h3>Kagwima Benson - CEO</h3>
-        <p>Experienced in product development, food safety programs, and a former researcher at Kenya Industrial Research and Development Institute. Fun fact: music enthusiast + playing bullshit 🤣🎯</p>
+        <img src="team1.jpg" alt="Kagwima Benson">
+        <div>
+          <h3>Kagwima Benson - CEO</h3>
+          <p>Experienced in product development, food safety programs, and a former researcher. Fun fact: music enthusiast + playing bullshit 🤣🎯</p>
+        </div>
       </div>
       <div class="profile">
-        <h3>Elvis Kuboka - Quality Director</h3>
-        <p>A food technologist with over 5 years of hands on skills and knowledge in food processing and manufacturing as well as a background in quality control and quality assuarance.
-           Passionate about improving human life through food technology.
-           Fun fact: Elvis is a sports and fitness enthusiast.</p>
-        <p>Contact: 0114403588 | rielkub@gmail.com</p>
+        <img src="team2.jpg" alt="Elvis Kuboka">
+        <div>
+          <h3>Elvis Kuboka - Quality Director</h3>
+          <p>A food technologist with over 5 years of hands-on experience. Fun fact: sports and fitness enthusiast.</p>
+          <p>Contact: 0114403588 | rielkub@gmail.com</p>
+        </div>
       </div>
       <div class="profile">
-        <h3>James Kamau Maina - Finance Director</h3>
-        <p>Over 3 years of experience in dental healthcare startup companies in the country.</p>
-        <p>Contact: 0796294401 | maina2966@gmail.com</p>
+        <img src="team3.jpg" alt="James Kamau Maina">
+        <div>
+          <h3>James Kamau Maina - Finance Director</h3>
+          <p>Over 3 years of experience in dental healthcare startups.</p>
+          <p>Contact: 0796294401 | maina2966@gmail.com</p>
+        </div>
       </div>
       <div class="profile">
-        <h3>Isaac Kipngeny Ronoh - Sales and Purchase Director</h3>
-        <p>Seven years of experience in Quality Assurance. Expertise in Quality Management Systems and Food Safety Management Systems. Fun fact: Isaac loves swimming and dangerous exploration.</p>
-        <p>Contact: 0717777218 | isaacronoh23@gmail.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/isaac-ronoh-2045bb172" target="_blank">View Profile</a></p>
+        <img src="team4.jpg" alt="Isaac Kipngeny Ronoh">
+        <div>
+          <h3>Isaac Kipngeny Ronoh - Sales and Purchase Director</h3>
+          <p>Seven years of experience in Quality Assurance. Fun fact: loves swimming and dangerous exploration.</p>
+          <p>Contact: 0717777218 | isaacronoh23@gmail.com</p>
+          <p><a href="https://www.linkedin.com/in/isaac-ronoh-2045bb172" target="_blank">View Profile</a></p>
+        </div>
       </div>
       <div class="profile">
-        <h3>Antony Muturi Njoroge – Head Production and Human Resource</h3>
-        <p>With a solid foundation in production and management, Antony Muturi Njoroge brings expertise in high quality production, and management. He has a proven track record of contributing to operational efficiency and quality management across various sectors. Antony is passionate about leveraging his technical knowledge to drive sustainable solutions and improve organizational performance.  
-           Fun fact: Antony enjoys exploring innovative solutions and adventures.</p>
-        <p>Contact: 0757774765 | antonymuturinjoroge@gmail.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/antony-njoroge-1668821b7" target="_blank">View Profile</a></p>
+        <img src="team5.jpg" alt="Antony Muturi Njoroge">
+        <div>
+          <h3>Antony Muturi Njoroge – Head Production & HR</h3>
+          <p>Expert in production and management. Fun fact: enjoys exploring innovative solutions.</p>
+          <p>Contact: 0757774765 | antonymuturinjoroge@gmail.com</p>
+          <p><a href="https://www.linkedin.com/in/antony-njoroge-1668821b7" target="_blank">View Profile</a></p>
+        </div>
       </div>
       <div class="profile">
-        <h3>Tracy Ayieko – Head Marketing and IT</h3>
-        <p>Drives innovation and brand growth with over three years of experience in web design, digital marketing, and IT, every project is handled with precision and originality. A true creative at heart, passionate about design and crafting impactful digital experiences.
-           Fun fact: A talented vocalist!</p>
-        <p>Contact: 0793854029 | teey.soln@gmail.com</p>
+        <img src="team6.jpg" alt="Tracy Ayieko">
+        <div>
+          <h3>Tracy Ayieko – Head Marketing and IT</h3>
+          <p>Drives innovation with over three years of experience in web design and digital marketing. Fun fact: a talented vocalist!</p>
+          <p>Contact: 0793854029 | teey.soln@gmail.com</p>
+        </div>
       </div>
+      <a href="team.html" class="learn-more">Learn More</a>
     </section>
-
+    
     <!-- Contact Section -->
     <section id="contact">
       <h2>Contact Us</h2>
       <p>Phone: +254-713-081480</p>
       <p>Email: <a href="mailto:instantryans123@gmail.com">instantryans123@gmail.com</a></p>
       <p>Address: James and Ben Enterprises, Nairobi, Kenya.</p>
-      <p>Instagram: <a href="https://www.instagram.com/ryansinstantporridgeke" target="_blank">ryansinstantporridgeke</a></p>
-      <p>TikTok: <a href="https://www.tiktok.com/@ryansinstantporridgeke" target="_blank">ryansinstantporridgeke</a></p>
-      <p>WhatsApp: [Your WhatsApp Number or link]</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/ryansinstantporridgeke" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+        <a href="https://www.tiktok.com/@ryansinstantporridgeke" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
+        <a href="https://wa.me/254782619275" target="_blank"><img src="whatsapp.png" alt="WhatsApp"></a>
+      </div>
     </section>
   </div>
   
