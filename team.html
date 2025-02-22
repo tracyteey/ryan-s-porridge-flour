@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Learn More - Team | Ryans Porridge Flours</title>
+  <title>Our Team | Ryans Porridge Flours</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; background: #fafafa; color: #4a200d; line-height: 1.6; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+      background: #fafafa;
+      color: #4a200d;
+      line-height: 1.6;
+      padding: 20px;
+    }
     header {
       background: #2e6c51;
       padding: 20px;
@@ -18,21 +24,35 @@
       position: absolute;
       left: 20px;
       top: 20px;
-      text-decoration: none;
       color: white;
+      text-decoration: none;
       font-size: 1.2em;
     }
     .container {
-      width: 90%;
       max-width: 1200px;
       margin: 40px auto;
     }
-    h2 { margin-bottom: 20px; color: #ffdc00; }
-    .team-details {
+    h2 {
+      color: #2e6c51;
+      margin-bottom: 20px;
+    }
+    .team-member {
       background: #e9bb10;
       padding: 20px;
       border-radius: 10px;
       margin-bottom: 20px;
+    }
+    /* CEO gets a picture; others do not */
+    .ceo {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .ceo img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
     }
     .learn-more {
       display: inline-block;
@@ -40,9 +60,11 @@
       padding: 10px 20px;
       background: #2e6c51;
       color: white;
-      border-radius: 5px;
       text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
     }
+    .learn-more:hover { background: #4a200d; }
   </style>
 </head>
 <body>
@@ -51,15 +73,34 @@
     <h1>Our Extended Team</h1>
   </header>
   <div class="container">
-    <h2>Kagwima Benson - CEO</h2>
-    <div class="team-details">
-      <p>Detailed profile information, background, achievements, and vision for Kagwima Benson.</p>
+    <h2>Meet Our Team</h2>
+    <div class="team-member ceo">
+      <img src="team1.jpg" alt="Kagwima Benson - CEO">
+      <div>
+        <h3>Kagwima Benson - CEO</h3>
+        <p>Kagwima Benson, founder of James &amp; Ben Enterprises (established in 2018), leads our team with vision and dedication.</p>
+      </div>
     </div>
-    <h2>Elvis Kuboka - Quality Director</h2>
-    <div class="team-details">
-      <p>Detailed profile information for Elvis Kuboka. (Add more details as needed.)</p>
+    <div class="team-member">
+      <h3>Elvis Kuboka - Quality Director</h3>
+      <p>Elvis has over 5 years of experience in food processing and quality assurance, ensuring our products meet the highest standards.</p>
     </div>
-    <!-- Add additional extended profiles for other team members here -->
+    <div class="team-member">
+      <h3>James Kamau Maina - Finance Director</h3>
+      <p>With expertise in financial management, James drives our company's growth and stability.</p>
+    </div>
+    <div class="team-member">
+      <h3>Isaac Kipngeny Ronoh - Sales &amp; Purchase Director</h3>
+      <p>Isaac brings strategic insight and extensive experience in quality assurance and sales management.</p>
+    </div>
+    <div class="team-member">
+      <h3>Antony Muturi Njoroge – Head Production &amp; HR</h3>
+      <p>Antony is dedicated to operational efficiency and human resource management, ensuring smooth production processes.</p>
+    </div>
+    <div class="team-member">
+      <h3>Tracy Ayieko – Head Marketing and IT</h3>
+      <p>Tracy drives our digital presence with creative strategies and expertise in web design and marketing.</p>
+    </div>
     <a href="index.html" class="learn-more">Return Home</a>
   </div>
 </body>
