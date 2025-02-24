@@ -15,6 +15,17 @@
       line-height: 1.6;
       scroll-behavior: smooth;
     }
+    body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(233, 187, 16, 0.1); /* Low opacity yellow */
+  z-index: -1;
+}
+
     /* Header with Background & Overlay */
     header {
       position: relative;
