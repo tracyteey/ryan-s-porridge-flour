@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Extended Recipes | Ryans Porridge Flours</title>
+  <title>Recipes | Ryans Porridge Flours</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -11,14 +11,20 @@
       background: #ffffff;
       color: #4a200d;
       line-height: 1.6;
-      padding: 20px;
     }
     header {
-      background: #2e6c51;
-      padding: 20px;
+      background: url('recipes-header.jpg') center/cover no-repeat;
+      padding: 60px 20px;
       text-align: center;
       color: white;
       position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(46,108,81,0.6);
+      z-index: 0;
     }
     .back-arrow {
       position: absolute;
@@ -27,18 +33,27 @@
       color: white;
       text-decoration: none;
       font-size: 1.2em;
+      z-index: 1;
+    }
+    header h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 3em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
     .container {
       max-width: 1200px;
       margin: 40px auto;
+      padding: 0 20px;
     }
     h2 {
       color: #2e6c51;
-      margin-bottom: 20px;
+      margin: 30px 0 20px;
       border-bottom: 2px solid #e9bb10;
       padding-bottom: 10px;
+      font-size: 2em;
     }
-    /* Recipe Cards – White cards with accent borders */
     .recipe-card {
       background: #ffffff;
       border: 2px solid #e9bb10;
@@ -60,9 +75,7 @@
     .recipe-content {
       flex: 1;
     }
-    .recipe-content ol {
-      margin-left: 20px;
-    }
+    .recipe-content ol { margin-left: 20px; }
     .learn-more {
       display: inline-block;
       margin-top: 20px;
@@ -74,12 +87,6 @@
       transition: background-color 0.3s;
     }
     .learn-more:hover { background: #4a200d; }
-    /* Section Headings */
-    .section-heading {
-      margin: 30px 0 20px;
-      color: #2e6c51;
-      font-size: 1.8em;
-    }
   </style>
 </head>
 <body>
@@ -116,7 +123,7 @@
       </div>
     </div>
     
-    <h2 class="section-heading">Flavour Variations</h2>
+    <h2>Flavour Variations</h2>
     <div class="recipe-card">
       <img src="lemorific.jpg" alt="Lemorific">
       <div class="recipe-content">
