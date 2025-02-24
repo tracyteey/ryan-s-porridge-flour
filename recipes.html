@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Recipes | Ryans Porridge Flours</title>
+  <title>Extended Recipes | Ryans Porridge Flours</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -14,17 +14,12 @@
     }
     header {
       background: url('recipes-header.jpg') center/cover no-repeat;
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
       color: white;
-      position: relative;
-    }
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(46,108,81,0.6);
-      z-index: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     .back-arrow {
       position: absolute;
@@ -32,13 +27,10 @@
       top: 20px;
       color: white;
       text-decoration: none;
-      font-size: 1.2em;
-      z-index: 1;
+      font-size: 1.4em;
     }
     header h1 {
-      position: relative;
-      z-index: 1;
-      font-size: 3em;
+      font-size: 3.2em;
       margin-bottom: 10px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
@@ -87,6 +79,11 @@
       transition: background-color 0.3s;
     }
     .learn-more:hover { background: #4a200d; }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.6em; }
+      .recipe-card { flex-direction: column; align-items: center; text-align: center; }
+      .recipe-content ol { margin-left: 0; }
+    }
   </style>
 </head>
 <body>
