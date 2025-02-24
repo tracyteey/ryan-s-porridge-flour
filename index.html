@@ -134,6 +134,15 @@
       color: #fff;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
+    .yellow-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(233, 187, 16, 0.3); /* Yellow with 30% opacity */
+  pointer-events: none; /* So it doesn’t block interactions with content below */
+}
     .main-recipes {
       display: flex;
       flex-wrap: wrap;
@@ -298,6 +307,7 @@
     
     <!-- Recipes Section on Main Page -->
     <section id="recipes">
+      <div class="yellow-overlay"></div>
       <h2>Recipes</h2>
       <div class="main-recipes">
         <div class="recipe-card">
