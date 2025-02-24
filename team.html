@@ -11,14 +11,20 @@
       background: #ffffff;
       color: #4a200d;
       line-height: 1.6;
-      padding: 20px;
     }
     header {
-      background: #2e6c51;
-      padding: 20px;
+      background: url('team-bg.jpg') center/cover no-repeat;
+      padding: 60px 20px;
       text-align: center;
       color: white;
       position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(46,108,81,0.6);
+      z-index: 0;
     }
     .back-arrow {
       position: absolute;
@@ -27,18 +33,28 @@
       color: white;
       text-decoration: none;
       font-size: 1.2em;
+      z-index: 1;
+    }
+    header h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 3em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
     .container {
       max-width: 1200px;
       margin: 40px auto;
+      padding: 0 20px;
     }
     h2 {
       color: #2e6c51;
       margin-bottom: 20px;
       border-bottom: 2px solid #e9bb10;
       padding-bottom: 10px;
+      font-size: 2em;
     }
-    /* Company Info Section (on team page) */
+    /* Company Info Section */
     .company-info {
       background: #ffffff;
       border: 2px solid #e9bb10;
@@ -68,10 +84,8 @@
       object-fit: cover;
       border-radius: 50%;
     }
-    .member-info {
-      flex: 1;
-    }
-    /* Other Team Members (text only) */
+    .member-info { flex: 1; }
+    /* Other Team Members (Text Only) */
     .team-details {
       background: #ffffff;
       border: 2px solid #e9bb10;
@@ -99,11 +113,9 @@
     <h1>Our Team</h1>
   </header>
   <div class="container">
-    <!-- Company Information Section -->
     <div class="company-info">
       <h2>About Our Company</h2>
-      <p>Founded in 2018 by Kagwima Benson, James &amp; Ben Enterprises thrives on innovation, quality, and teamwork.</p>
-      <p>We believe that our success is driven by our commitment to excellence and the collaborative spirit of our team.</p>
+      <p>Founded in 2018 by Kagwima Benson, James &amp; Ben Enterprises stands as a testament to innovation, integrity, and teamwork. We believe that the collaborative spirit of our team is the key to our success, driving our commitment to excellence and quality in every product we deliver.</p>
       <p><strong>CEO:</strong> Kagwima Benson</p>
     </div>
     
@@ -112,37 +124,33 @@
       <img src="team1.jpg" alt="Kagwima Benson - CEO">
       <div class="member-info">
         <h2>Kagwima Benson - CEO</h2>
-        <p>Our founder and visionary leader who established the company in 2018. His commitment to quality and innovation drives the entire team.</p>
+        <p>Kagwima Benson is our visionary founder. With a relentless passion for quality and innovation, he established the company in 2018 and continues to drive our mission of delivering premium porridge flours that nourish and inspire.</p>
       </div>
     </div>
     <div class="team-member">
       <img src="team2.jpg" alt="Product Manager">
       <div class="member-info">
         <h2>Product Manager</h2>
-        <p>Responsible for overseeing product development and ensuring our porridge flours meet the highest standards.</p>
+        <p>Our Product Manager oversees the development and refinement of our products, ensuring they meet the highest standards of taste and nutrition.</p>
       </div>
     </div>
     
     <!-- Other Team Members (Text Only) -->
     <div class="team-details">
-      <h2>Quality Director</h2>
-      <p>Elvis Kuboka brings over 5 years of experience in food processing and quality assurance.</p>
-    </div>
-    <div class="team-details">
       <h2>Finance Director</h2>
-      <p>James Kamau Maina drives financial strategy and supports our growth initiatives.</p>
+      <p>James Kamau Maina drives our financial strategy, supporting sustainable growth and stability.</p>
     </div>
     <div class="team-details">
       <h2>Sales &amp; Purchase Director</h2>
-      <p>Isaac Kipngeny Ronoh leverages his expertise to manage strategic partnerships and sales operations.</p>
-    </div>
-    <div class="team-details">
-      <h2>Head Production &amp; HR</h2>
-      <p>Antony Muturi Njoroge ensures operational efficiency and nurtures our human resources.</p>
+      <p>Isaac Kipngeny Ronoh leverages his expertise in quality assurance and strategic sales to manage key partnerships.</p>
     </div>
     <div class="team-details">
       <h2>Head Marketing and IT</h2>
-      <p>Tracy Ayieko spearheads our digital presence and innovative marketing strategies.</p>
+      <p>Tracy Ayieko spearheads our digital presence and marketing innovation with creative strategies and technical expertise.</p>
+    </div>
+    <div class="team-details">
+      <h2>Quality Director</h2>
+      <p>Elvis Kuboka brings over 5 years of experience in food processing and quality assurance, ensuring our products exceed expectations.</p>
     </div>
     
     <a href="index.html" class="learn-more">Return Home</a>
