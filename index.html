@@ -15,17 +15,17 @@
       line-height: 1.6;
       scroll-behavior: smooth;
     }
+    /* (Optional) Global Page Overlay - if you want an overall yellow tint in the background */
     body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(233, 187, 16, 0.1); /* Low opacity yellow */
-  z-index: -1;
-}
-
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(233,187,16,0.1); /* Very low opacity yellow */
+      z-index: -1;
+    }
     /* Header with Background & Overlay */
     header {
       position: relative;
@@ -128,7 +128,7 @@
       transition: transform 0.3s;
     }
     .product img:hover { transform: scale(1.05); }
-    /* Below each product, add a text link for recipes */
+    /* See Recipes Link (Text Only) */
     .see-recipes-text {
       margin-top: 10px;
       font-size: 0.9em;
@@ -138,22 +138,29 @@
       text-decoration: underline;
       cursor: pointer;
     }
-    /* Recipes Section on Main Page */
+    /* Recipes Section on Main Page with Green Overlay */
     #recipes {
+      position: relative;
       background: url('recipes-bg.jpg') center/cover no-repeat;
       padding: 40px 20px;
       color: #fff;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
-    .yellow-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(233, 187, 16, 0.3); /* Yellow with 30% opacity */
-  pointer-events: none; /* So it doesn’t block interactions with content below */
-}
+    #recipes::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(46,108,81,0.3); /* Green overlay with 30% opacity */
+      pointer-events: none;
+      z-index: 1;
+    }
+    #recipes > * {
+      position: relative;
+      z-index: 2;
+    }
     .main-recipes {
       display: flex;
       flex-wrap: wrap;
@@ -217,10 +224,26 @@
       transition: background-color 0.3s;
     }
     .team-button:hover { background-color: #4a200d; }
-    /* Contact Section */
+    /* Contact Section with Yellow Overlay */
     #contact {
+      position: relative;
       padding: 40px 20px;
       text-align: center;
+    }
+    #contact::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(233,187,16,0.2); /* Yellow overlay with 20% opacity */
+      pointer-events: none;
+      z-index: 1;
+    }
+    #contact > * {
+      position: relative;
+      z-index: 2;
     }
     #contact a { text-decoration: none; }
     .social-icons {
