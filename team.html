@@ -14,10 +14,12 @@
     }
     header {
       background: url('team-bg.jpg') center/cover no-repeat;
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
       color: white;
-      position: relative;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     header::after {
       content: "";
@@ -32,15 +34,15 @@
       top: 20px;
       color: white;
       text-decoration: none;
-      font-size: 1.2em;
+      font-size: 1.4em;
       z-index: 1;
     }
     header h1 {
-      position: relative;
-      z-index: 1;
-      font-size: 3em;
+      font-size: 3.2em;
       margin-bottom: 10px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 1;
     }
     .container {
       max-width: 1200px;
@@ -62,10 +64,7 @@
       border-radius: 10px;
       margin-bottom: 30px;
     }
-    .company-info p {
-      font-size: 1.1em;
-      margin-bottom: 10px;
-    }
+    .company-info p { font-size: 1.1em; margin-bottom: 10px; }
     /* Team Members with Photos */
     .team-member {
       background: #ffffff;
@@ -105,6 +104,11 @@
       transition: background-color 0.3s;
     }
     .learn-more:hover { background: #4a200d; }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.6em; }
+      .team-member { flex-direction: column; align-items: center; text-align: center; }
+      .team-member img { margin-bottom: 10px; }
+    }
   </style>
 </head>
 <body>
@@ -124,29 +128,29 @@
       <img src="team1.jpg" alt="Kagwima Benson - CEO">
       <div class="member-info">
         <h2>Kagwima Benson - CEO</h2>
-        <p>Kagwima Benson is our visionary founder. With a relentless passion for quality and innovation, he established the company in 2018 and continues to drive our mission of delivering premium porridge flours that nourish and inspire.</p>
+        <p>Kagwima Benson is our visionary founder. His relentless passion for quality and innovation has steered the company since its inception in 2018, inspiring a culture of excellence and sustainable growth.</p>
       </div>
     </div>
     <div class="team-member">
       <img src="team2.jpg" alt="Product Manager">
       <div class="member-info">
         <h2>Product Manager</h2>
-        <p>Our Product Manager oversees the development and refinement of our products, ensuring they meet the highest standards of taste and nutrition.</p>
+        <p>Our Product Manager oversees product development with a keen eye for detail and a commitment to delivering nutritious, high-quality porridge flours.</p>
       </div>
     </div>
     
     <!-- Other Team Members (Text Only) -->
     <div class="team-details">
       <h2>Finance Director</h2>
-      <p>James Kamau Maina drives our financial strategy, supporting sustainable growth and stability.</p>
+      <p>James Kamau Maina drives our financial strategy and ensures sustainable growth for the company.</p>
     </div>
     <div class="team-details">
       <h2>Sales &amp; Purchase Director</h2>
-      <p>Isaac Kipngeny Ronoh leverages his expertise in quality assurance and strategic sales to manage key partnerships.</p>
+      <p>Isaac Kipngeny Ronoh leverages his expertise to manage strategic partnerships and sales operations.</p>
     </div>
     <div class="team-details">
       <h2>Head Marketing and IT</h2>
-      <p>Tracy Ayieko spearheads our digital presence and marketing innovation with creative strategies and technical expertise.</p>
+      <p>Tracy Ayieko spearheads our digital presence and innovative marketing strategies.</p>
     </div>
     <div class="team-details">
       <h2>Quality Director</h2>
