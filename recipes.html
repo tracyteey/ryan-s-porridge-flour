@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Recipes | Ryans Porridge Flours</title>
+  <title>Extended Recipes | Ryans Porridge Flours</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -12,14 +12,26 @@
       color: #4a200d;
       line-height: 1.6;
     }
+    /* Header without sticky property and with gradient fade at the bottom */
     header {
       background: url('recipes-header.jpg') center/cover no-repeat;
       padding: 80px 20px;
       text-align: center;
       color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      position: relative;
+      /* Removed sticky and z-index */
+    }
+    /* Gradient fade overlay to blend the header with the content */
+    header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 60px;
+      background: linear-gradient(to bottom, transparent, #ffffff);
+      pointer-events: none;
+      z-index: 1;
     }
     .back-arrow {
       position: absolute;
@@ -28,11 +40,14 @@
       color: white;
       text-decoration: none;
       font-size: 1.4em;
+      z-index: 2;
     }
     header h1 {
       font-size: 3.2em;
       margin-bottom: 10px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 2;
     }
     .container {
       max-width: 1200px;
