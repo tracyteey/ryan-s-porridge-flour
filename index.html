@@ -117,33 +117,16 @@
       transition: transform 0.3s;
     }
     .product img:hover { transform: scale(1.05); }
-    /* See Recipes Icon below each product */
-    .see-recipes {
+    /* Below each product, add a text link for recipes */
+    .see-recipes-text {
       margin-top: 10px;
-    }
-    .see-recipes img { width: 30px; height: 30px; cursor: pointer; }
-    /* Flavours Section (Single appearance after recipes) */
-    .flavour-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .flavour-buttons a {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 10px 15px;
-      background-color: #2e6c51;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
       font-size: 0.9em;
     }
-    .flavour-buttons a:hover { background-color: #4a200d; }
-    .flavour-buttons img { width: 20px; height: 20px; border-radius: 3px; }
+    .see-recipes-text a {
+      color: #2e6c51;
+      text-decoration: underline;
+      cursor: pointer;
+    }
     /* Recipes Section on Main Page */
     #recipes {
       background: url('recipes-bg.jpg') center/cover no-repeat;
@@ -167,6 +150,28 @@
     }
     .recipe-card h3 { margin-top: 0; }
     .recipe-card ol { margin-left: 20px; }
+    /* Flavours Section – Only once after recipes */
+    .flavour-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .flavour-buttons a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 10px 15px;
+      background-color: #2e6c51;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      font-size: 0.9em;
+    }
+    .flavour-buttons a:hover { background-color: #4a200d; }
+    .flavour-buttons img { width: 20px; height: 20px; border-radius: 3px; }
     /* About Us Section */
     #about {
       padding: 40px 20px;
@@ -180,9 +185,7 @@
     }
     #profiles p { font-size: 1.1em; margin-bottom: 20px; }
     .team-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
+      display: inline-block;
       width: 200px;
       margin: 20px auto;
       padding: 10px 20px;
@@ -194,7 +197,6 @@
       transition: background-color 0.3s;
     }
     .team-button:hover { background-color: #4a200d; }
-    .team-button img { width: 20px; height: 20px; }
     /* Contact Section */
     #contact {
       padding: 40px 20px;
@@ -244,6 +246,7 @@
       nav a { margin: 0 10px; font-size: 0.9em; }
       .product { min-width: 260px; padding: 15px; }
       .recipe-card, .product { flex: 1 1 260px; }
+      .flavour-buttons a { font-size: 0.8em; padding: 8px 12px; }
     }
   </style>
 </head>
@@ -277,10 +280,8 @@
           <p><em>"Quick, Nutritious and Delicious"</em></p>
           <p>Ready-to-use porridge blend for fast, wholesome meals.</p>
           <img src="instant-porridge.jpg" alt="Ryan's Instant Porridge">
-          <div class="see-recipes">
-            <a href="recipes.html">
-              <img src="see-recipes-icon.png" alt="See Recipes">
-            </a>
+          <div class="see-recipes-text">
+            <a href="recipes.html">See Recipes</a>
           </div>
         </div>
         <div class="product">
@@ -288,10 +289,8 @@
           <p><em>"High fiber, better digestion!"</em></p>
           <p>Crafted for a fiber-rich diet that supports digestion.</p>
           <img src="high-fiber-porridge.jpg" alt="Ryan's High Fibre Porridge Flour">
-          <div class="see-recipes">
-            <a href="recipes.html">
-              <img src="see-recipes-icon.png" alt="See Recipes">
-            </a>
+          <div class="see-recipes-text">
+            <a href="recipes.html">See Recipes</a>
           </div>
         </div>
       </div>
@@ -305,7 +304,7 @@
           <h3>Ryan's Instant Porridge Recipe</h3>
           <ol>
             <li>Add 4 tablespoons of flour to a cup or bowl.</li>
-            <li>Slowly add cold water (less than half a cup) and stir until a smooth paste forms.</li>
+            <li>Slowly add cold water until a smooth paste forms.</li>
             <li>Gradually pour in hot water or milk while stirring until desired thickness is reached.</li>
             <li>Add your favorite sweetener or flavor.</li>
             <li>Your porridge is ready to enjoy!</li>
@@ -322,7 +321,7 @@
           </ol>
         </div>
       </div>
-      <!-- Flavours Buttons -->
+      <!-- Flavours Section -->
       <h3>Try Our Flavours</h3>
       <div class="flavour-buttons">
         <a href="recipes.html"><img src="lemorific.jpg" alt="Lemorific">Lemorific</a>
@@ -338,9 +337,9 @@
       <h2>About Us</h2>
       <p>
         At James &amp; Ben, we are committed to quality, innovation, and excellence in nutrition.
-        Founded in 2018 by Kagwima Benson, our mission is to deliver premium porridge flours
-        that nourish and inspire. We work tirelessly to ensure every product reflects our dedication
-        to health and sustainability. Our company is built on integrity, attention to detail, and a passion for excellence.
+        Founded in 2018 by Kagwima Benson, our mission is to deliver premium porridge flours that
+        nourish and inspire. We work tirelessly to ensure every product reflects our dedication to health,
+        sustainability, and a passion for excellence.
       </p>
     </section>
     
@@ -348,12 +347,10 @@
     <section id="profiles">
       <h2>Our Team</h2>
       <p>
-        We believe that teamwork is the cornerstone of success. Our company thrives on collaboration,
-        innovation, and a shared vision—led by our CEO, Kagwima Benson. Together, we build a better future.
+        We believe that teamwork is the cornerstone of success. Our company thrives on collaboration and innovation,
+        led by our CEO, Kagwima Benson. Together, we build a better future.
       </p>
-      <a href="team.html" class="team-button">
-        <img src="team-icon.png" alt="Our Team"> Our Team
-      </a>
+      <a href="team.html" class="team-button">Our Team</a>
     </section>
     
     <!-- Contact Section -->
