@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timu Yetu | Unga wa Porridge wa Ryans</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+      background: #ffffff;
+      color: #4a200d;
+      line-height: 1.6;
+    }
+    header {
+      background: url('team-bg.jpg') center/cover no-repeat;
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+      /* Removed sticky */
+    }
+    .back-arrow {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 1.4em;
+    }
+    header h1 {
+      font-size: 3.2em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      color: #2e6c51;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e9bb10;
+      padding-bottom: 10px;
+      font-size: 2em;
+      text-align: center;
+    }
+    /* Company Info Section */
+    .company-info {
+      background: #ffffff;
+      border: 2px solid #e9bb10;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .company-info p { 
+      font-size: 1.1em; 
+      margin-bottom: 10px; 
+    }
+    /* Team Grid for Photo Profiles (3 Columns) */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .team-member {
+      background: #ffffff;
+      border: 2px solid #e9bb10;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .member-info h3 {
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+    .member-info p {
+      font-size: 1em;
+    }
+    /* Text Only Team Members */
+    .team-details {
+      background: #ffffff;
+      border: 2px solid #e9bb10;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .team-details h3 {
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+    .team-details p {
+      font-size: 1em;
+    }
+    .learn-more {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #2e6c51;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      text-align: center;
+    }
+    .learn-more:hover { background: #4a200d; }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.6em; }
+      .team-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="back-arrow">&larr; Rudi</a>
+    <h1>Timu Yetu</h1>
+  </header>
+  <div class="container">
+    <!-- Company Info Section -->
+    <div class="company-info">
+      <h2>Kuhusu Kampuni Yetu</h2>
+      <p>Kampuni Yetu ilianzishwa mnamo mwaka 2018 na Kagwima Benson na James Kamau. James &amp; Ben Enterprises ni ushahidi wa ubunifu, uaminifu, na kazi ya pamoja. Tunaamini kuwa roho ya ushirikiano ya timu yetu ndiyo ufunguo wa mafanikio yetu, ikichochea ahadi yetu ya ubora katika kila bidhaa tunazozalisha.</p>
+      <p><strong>Mkurugenzi Mtendaji:</strong> Kagwima Benson</p>
+    </div>
+    
+    <!-- Team Grid with Photos (3 Columns) -->
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="team1.jpg" alt="Kagwima Benson - CEO">
+        <div class="member-info">
+          <h3>Kagwima Benson - Mkurugenzi Mtendaji</h3>
+          <p>Kagwima Benson, mwanzilishi wetu mwenye maono, amevaongoza kampuni tangu 2018 kwa shauku yake isiyokoma ya ubora na ubunifu, akichochea utamaduni wa ubora na ukuaji endelevu.</p>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="team2.jpg" alt="Antony Muturi Njoroge - Production & HR Manager">
+        <div class="member-info">
+          <h3>Antony Muturi Njoroge - Meneja wa Uzalishaji na Rasilimali Watu</h3>
+          <p>Antony anasimamia maendeleo ya bidhaa kwa uangalifu mkubwa na kujitolea kutoa unga wa porridge wenye lishe na ubora wa hali ya juu. Ujuzi wake wa kiufundi unachochea ufumbuzi endelevu katika kampuni yetu.</p>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="team4.jpg" alt="James Kamau Maina - Finance Director">
+        <div class="member-info">
+          <h3>James Kamau Maina - Mkurugenzi wa Fedha</h3>
+          <p>James Kamau Maina anaendesha mkakati wetu wa fedha na kuhakikisha ukuaji endelevu wa kampuni. Kama mmoja wa waanzilishi, analeta uzoefu wa zaidi ya miaka 3 katika mazingira ya biashara mpya.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Other Team Members (Text Only) -->
+    <div class="team-details">
+      <h3>Isaac Kipngeny Ronoh - Mkurugenzi wa Mauzo na Ununuzi</h3>
+      <p>Isaac anatumia utaalamu wake kusimamia ushirikiano wa kimkakati na shughuli za mauzo, akiwa na uzoefu wa miaka saba katika uhakikisho wa ubora, mifumo ya usimamizi wa ubora, na mifumo ya usalama wa chakula.</p>
+    </div>
+    <div class="team-details">
+      <h3>Tracy Ayieko - Masoko na TEHAMA</h3>
+      <p>Tracy anatawala uwepo wetu wa dijitali na mikakati ya masoko ya ubunifu, akiwa na uzoefu wa zaidi ya miaka mitatu katika usanifu wa tovuti, masoko ya dijitali, na TEHAMA. Yeye ni nguvu ya ubunifu yenye shauku ya kuunda uzoefu wa dijitali wenye athari kubwa.</p>
+    </div>
+    <div class="team-details">
+      <h3>Mkurugenzi wa Ubora</h3>
+      <p>Elvis Kuboka ni mtaalam wa chakula mwenye uzoefu wa miaka zaidi ya 5 katika usindikaji na uzalishaji wa chakula, pamoja na uzoefu mkubwa katika udhibiti na uhakikisho wa ubora, akitambua umuhimu wa kuboresha maisha ya binadamu kupitia teknolojia ya chakula.</p>
+    </div>
+    
+    <a href="index.html" class="learn-more">Rudi Nyumbani</a>
+  </div>
+</body>
+</html>
