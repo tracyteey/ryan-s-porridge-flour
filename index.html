@@ -15,16 +15,29 @@
       line-height: 1.6;
       scroll-behavior: smooth;
     }
-    /* (Optional) Global Page Overlay - if you want an overall yellow tint in the background */
+    /* Global Page Overlay (Optional) */
     body::before {
       content: "";
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(233,187,16,0.1); /* Very low opacity yellow */
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(233,187,16,0.1);
       z-index: -1;
+    }
+    /* Language Selector Bar */
+    nav.language {
+      background: #e9bb10;
+      padding: 10px 20px;
+      text-align: right;
+      font-size: 1em;
+    }
+    nav.language a {
+      color: #4a200d;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+    nav.language a:hover {
+      color: #2e6c51;
     }
     /* Header with Background & Overlay */
     header {
@@ -34,16 +47,6 @@
       color: white;
       background: url('header-bg.jpg') center/cover no-repeat;
     }
-    .yellow-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(233, 187, 16, 0.3);
-  pointer-events: none;
-}
-
     header::after {
       content: "";
       position: absolute;
@@ -61,7 +64,6 @@
       margin-bottom: 10px;
     }
     .logo-container img { max-height: 80px; display: block; }
-    /* Header Text */
     header h1 {
       position: relative;
       z-index: 1;
@@ -78,8 +80,8 @@
       color: #fff;
       letter-spacing: 1px;
     }
-    /* Navigation */
-    nav {
+    /* Main Navigation */
+    nav.main {
       background-color: #e9bb10;
       padding: 10px;
       text-align: center;
@@ -88,19 +90,20 @@
       z-index: 1000;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    nav a {
+    nav.main a {
       color: #4a200d;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
       transition: color 0.3s;
     }
-    nav a:hover { color: #2e6c51; }
+    nav.main a:hover { color: #2e6c51; }
     .container { width: 90%; max-width: 1200px; margin: 40px auto; }
     h2 {
       color: #e9bb10;
       margin: 40px 0 20px;
       font-size: 2em;
+      text-align: center;
       position: relative;
     }
     h2::after {
@@ -110,200 +113,28 @@
       height: 3px;
       background: #e9bb10;
       bottom: -5px;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%);
     }
-    /* Products Section */
-    .carousel {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .product {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-      flex: 1 1 300px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-      text-align: center;
-    }
-    .product:hover { transform: translateY(-5px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-    .product img {
-      max-width: 100%;
-      max-height: 200px;
-      object-fit: contain;
-      border-radius: 5px;
-      transition: transform 0.3s;
-    }
-    .product img:hover { transform: scale(1.05); }
-    /* See Recipes Link (Text Only) */
-    .see-recipes-text {
-      margin-top: 10px;
-      font-size: 0.9em;
-    }
-    .see-recipes-text a {
-      color: #2e6c51;
-      text-decoration: underline;
-      cursor: pointer;
-    }
-    /* Recipes Section on Main Page with Green Overlay */
-    #recipes {
-      position: relative;
-      background: url('recipes-bg.jpg') center/cover no-repeat;
-      padding: 40px 20px;
-      color: #fff;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    }
-    #recipes::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(46,108,81,0.3); /* Green overlay with 30% opacity */
-      pointer-events: none;
-      z-index: 1;
-    }
-    #recipes > * {
-      position: relative;
-      z-index: 2;
-    }
-    .main-recipes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .recipe-card {
-      background: rgba(46,108,81,0.7);
-      padding: 20px;
-      border-radius: 10px;
-      flex: 1 1 300px;
-      max-width: 500px;
-      animation: fadeIn 1s ease-in;
-    }
-    .recipe-card h3 { margin-top: 0; }
-    .recipe-card ol { margin-left: 20px; }
-    /* Flavours Section – Only once after recipes */
-    .flavour-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .flavour-buttons a {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 10px 15px;
-      background-color: #2e6c51;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-      font-size: 0.9em;
-    }
-    .flavour-buttons a:hover { background-color: #4a200d; }
-    .flavour-buttons img { width: 20px; height: 20px; border-radius: 3px; }
-    /* About Us Section */
-    #about {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    #about p { font-size: 1.2em; }
-    /* Team Section (Main Page – Company Info Only) */
-    #profiles {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    #profiles p { font-size: 1.1em; margin-bottom: 20px; }
-    .team-button {
-      display: inline-block;
-      width: 200px;
-      margin: 20px auto;
-      padding: 10px 20px;
-      background-color: #2e6c51;
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-    .team-button:hover { background-color: #4a200d; }
-    /* Contact Section with Yellow Overlay */
-    #contact {
-      position: relative;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    #contact::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(233,187,16,0.2); /* Yellow overlay with 20% opacity */
-      pointer-events: none;
-      z-index: 1;
-    }
-    #contact > * {
-      position: relative;
-      z-index: 2;
-    }
-    #contact a { text-decoration: none; }
-    .social-icons {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 10px;
-    }
-    .social-icons a img { width: 40px; height: 40px; }
-    /* Footer */
-    footer {
-      background: #2e6c51;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    footer p { margin: 0; font-size: 0.9em; }
-    /* Back to Top Button */
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #e9bb10;
-      color: #4a200d;
-      border: none;
-      border-radius: 50%;
-      padding: 12px;
-      font-size: 20px;
-      cursor: pointer;
-      display: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      transition: background-color 0.3s, transform 0.3s;
-      z-index: 100;
-    }
-    #backToTop:hover { background-color: #2e6c51; color: white; transform: scale(1.1); }
-    /* Fade In Animation */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      nav a { margin: 0 10px; font-size: 0.9em; }
-      .product { min-width: 260px; padding: 15px; }
-      .recipe-card, .product { flex: 1 1 260px; }
-      .flavour-buttons a { font-size: 0.8em; padding: 8px 12px; }
-    }
+    /* (Other sections such as Products, Recipes, About, Team, Contact – use your existing styles) */
   </style>
 </head>
 <body>
+  <!-- Language Selector -->
+  <nav class="language">
+    <a href="index.html">English</a>
+    <a href="index-sw.html">Kiswahili</a>
+  </nav>
+  
+  <!-- Main Navigation -->
+  <nav class="main">
+    <a href="#products">Products</a>
+    <a href="#recipes">Recipes</a>
+    <a href="#about">About Us</a>
+    <a href="#profiles">Team</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  
   <!-- Header -->
   <header>
     <div class="logo-container">
@@ -313,134 +144,16 @@
     <p>James & Ben Enterprises</p>
   </header>
   
-  <!-- Navigation -->
-  <nav>
-    <a href="#products">Products</a>
-    <a href="#recipes">Recipes</a>
-    <a href="#about">About Us</a>
-    <a href="#profiles">Team</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  
-  <!-- Main Content -->
   <div class="container">
-    <!-- Products Section -->
-    <section id="products">
-      <h2>Our Products</h2>
-      <div class="carousel">
-        <div class="product">
-          <h3>RYANS INSTANT PORRIDGE</h3>
-          <p><em>"Quick, Nutritious and Delicious"</em></p>
-          <p>Ready-to-use porridge blend for fast, wholesome meals.</p>
-          <img src="instant-porridge.jpg" alt="Ryan's Instant Porridge">
-          <div class="see-recipes-text">
-            <a href="recipes.html">See Recipes</a>
-          </div>
-        </div>
-        <div class="product">
-          <h3>RYAN’S HIGH FIBRE PORRIDGE FLOUR</h3>
-          <p><em>"High fiber, better digestion!"</em></p>
-          <p>Crafted for a fiber-rich diet that supports digestion.</p>
-          <img src="high-fiber-porridge.jpg" alt="Ryan's High Fibre Porridge Flour">
-          <div class="see-recipes-text">
-            <a href="recipes.html">See Recipes</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Recipes Section on Main Page -->
-    <section id="recipes">
-      <div class="yellow-overlay"></div>
-      <h2>Recipes</h2>
-      <div class="main-recipes">
-        <div class="recipe-card">
-          <h3>Ryan's Instant Porridge Recipe</h3>
-          <ol>
-            <li>Add 4 tablespoons of flour to a cup or bowl.</li>
-            <li>Slowly add cold water until a smooth paste forms.</li>
-            <li>Gradually pour in hot water or milk while stirring until desired thickness is reached.</li>
-            <li>Add your favorite sweetener or flavor.</li>
-            <li>Your porridge is ready to enjoy!</li>
-          </ol>
-        </div>
-        <div class="recipe-card">
-          <h3>Ryan's High Fibre Porridge Recipe (2 servings)</h3>
-          <ol>
-            <li>Mix 4 tablespoons of porridge flour with 1 cup of cold water to form a paste.</li>
-            <li>Boil 2 cups of water or milk.</li>
-            <li>Add the paste while stirring on low heat.</li>
-            <li>Cook for 7–10 minutes, stirring occasionally.</li>
-            <li>Sweeten to taste and serve hot.</li>
-          </ol>
-        </div>
-      </div>
-      <!-- Flavours Section -->
-      <h3>Try Our Flavours</h3>
-      <div class="flavour-buttons">
-        <a href="recipes.html"><img src="lemorific.jpg" alt="Lemorific">Lemorific</a>
-        <a href="recipes.html"><img src="coconutrific.jpg" alt="Coconutrific">Coconutrific</a>
-        <a href="recipes.html"><img src="banarific.jpg" alt="Banarific">Banarific</a>
-        <a href="recipes.html"><img src="chocorific.jpg" alt="Chocorific">Chocorific</a>
-        <a href="recipes.html"><img src="nutrific.jpg" alt="Nutrific">Nutrific</a>
-      </div>
-    </section>
-    
-    <!-- About Us Section -->
+    <!-- Your content sections (Products, Recipes, About, etc.) go here -->
     <section id="about">
       <h2>About Us</h2>
-      <p>
-        At James &amp; Ben, we are committed to quality, innovation, and excellence in nutrition.
-        Founded in 2018 , our mission is to deliver premium porridge flours that
-        nourish and inspire. We work tirelessly to ensure every product reflects our dedication to health,
-        sustainability, and a passion for excellence.
-      </p>
-    </section>
-    
-    <!-- Team Section (Main Page – Company Info Only) -->
-    <section id="profiles">
-      <h2>Our Team</h2>
-      <p>
-        We believe that teamwork is the cornerstone of success. Our company thrives on collaboration and innovation,
-        led by our CEO, Kagwima Benson. Together, we build a better future.
-      </p>
-      <a href="team.html" class="team-button">Our Team</a>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>Phone: +254-713-081480</p>
-      <p>Email: <a href="mailto:instantryans123@gmail.com">instantryans123@gmail.com</a></p>
-      <p>Address: James and Ben Enterprises, Nairobi, Kenya.</p>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/ryansinstantporridgeke" target="_blank"><img src="instagram.png" alt="Instagram"></a>
-        <a href="https://www.tiktok.com/@ryansinstantporridgeke" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
-        <a href="https://wa.me/254782619275" target="_blank"><img src="whatsapp.png" alt="WhatsApp"></a>
-      </div>
+      <p>Our mission is to deliver premium porridge flours that nourish and inspire.</p>
     </section>
   </div>
   
-  <!-- Back to Top Button -->
-  <button id="backToTop" aria-label="Back to Top">&uarr;</button>
-  
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 James &amp; Ben Enterprises. All rights reserved.</p>
+    <p>&copy; 2025 James & Ben Enterprises. All rights reserved.</p>
   </footer>
-  
-  <script>
-    const backToTopBtn = document.getElementById('backToTop');
-    window.onscroll = function() {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopBtn.style.display = "block";
-      } else {
-        backToTopBtn.style.display = "none";
-      }
-    };
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
 </body>
 </html>
