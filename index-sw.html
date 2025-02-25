@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unga wa Porridge wa Ryans | Kampuni ya James & Ben</title>
+  <style>
+    /* Global Reset & Base Styles */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+      background: #fafafa;
+      color: #4a200d;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    /* Global Page Overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(233,187,16,0.1);
+      z-index: -1;
+    }
+    /* Header with Background & Overlay */
+    header {
+      position: relative;
+      text-align: center;
+      padding: 20px 10px;
+      color: white;
+      background: url('header-bg.jpg') center/cover no-repeat;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(46,108,81,0.6);
+      z-index: 0;
+    }
+    .logo-container {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      background: white;
+      padding: 5px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    .logo-container img { max-height: 80px; display: block; }
+    header h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 2.8em;
+      color: #ffdc00;
+      margin: 10px 0 5px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    header p {
+      position: relative;
+      z-index: 1;
+      font-size: 1.2em;
+      margin: 0;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    /* Language Selector */
+    nav.language {
+      background: #e9bb10;
+      padding: 10px;
+      text-align: right;
+    }
+    nav.language a {
+      margin-left: 10px;
+      text-decoration: none;
+      color: #4a200d;
+      font-weight: bold;
+    }
+    /* Main Navigation */
+    nav.main {
+      background-color: #e9bb10;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav.main a {
+      color: #4a200d;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav.main a:hover { color: #2e6c51; }
+    .container { width: 90%; max-width: 1200px; margin: 40px auto; }
+    h2 {
+      color: #e9bb10;
+      margin: 40px 0 20px;
+      font-size: 2em;
+      text-align: center;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background: #e9bb10;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    /* (Other sections for Products, Recipes, About, etc. – same layout as English) */
+  </style>
+</head>
+<body>
+  <!-- Language Selector -->
+  <nav class="language">
+    <a href="index.html">Kiingereza</a>
+    <a href="index-sw.html">Kiswahili</a>
+  </nav>
+  
+  <!-- Main Navigation -->
+  <nav class="main">
+    <a href="#products">Bidhaa Zetu</a>
+    <a href="#recipes">Mapishi</a>
+    <a href="#about">Kuhusu Sisi</a>
+    <a href="#profiles">Timu Yetu</a>
+    <a href="#contact">Wasiliana</a>
+  </nav>
+  
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <img src="logo.png" alt="Alama ya Kampuni ya James & Ben">
+    </div>
+    <h1>Unga wa Porridge wa Ryans</h1>
+    <p>Kampuni ya James & Ben</p>
+  </header>
+  
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Example Section (About Us) -->
+    <section id="about">
+      <h2>Kuhusu Sisi</h2>
+      <p>Dhamira yetu ni kuwasilisha unga bora wa porridge unaolisha na kuhamasisha.</p>
+    </section>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Kampuni ya James & Ben. Haki zote zimehifadhiwa.</p>
+  </footer>
+</body>
+</html>
+
