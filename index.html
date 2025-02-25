@@ -15,7 +15,7 @@
       line-height: 1.6;
       scroll-behavior: smooth;
     }
-    /* Global Page Overlay (optional overall yellow tint) */
+    /* (Optional) Global Page Overlay - if you want an overall yellow tint in the background */
     body::before {
       content: "";
       position: fixed;
@@ -34,13 +34,20 @@
       color: white;
       background: url('header-bg.jpg') center/cover no-repeat;
     }
+    .yellow-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(233, 187, 16, 0.3);
+  pointer-events: none;
+}
+
     header::after {
       content: "";
       position: absolute;
-      top: 0; 
-      left: 0; 
-      right: 0; 
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(46,108,81,0.6);
       z-index: 0;
     }
@@ -95,7 +102,6 @@
       margin: 40px 0 20px;
       font-size: 2em;
       position: relative;
-      text-align: center;
     }
     h2::after {
       content: "";
@@ -104,8 +110,7 @@
       height: 3px;
       background: #e9bb10;
       bottom: -5px;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
     }
     /* Products Section */
     .carousel {
@@ -151,7 +156,6 @@
       color: #fff;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
-    /* Green overlay via pseudo-element */
     #recipes::before {
       content: "";
       position: absolute;
@@ -159,7 +163,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(46,108,81,0.3); /* 30% opacity green */
+      background: rgba(46,108,81,0.3); /* Green overlay with 30% opacity */
       pointer-events: none;
       z-index: 1;
     }
@@ -243,7 +247,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(233,187,16,0.2); /* 20% opacity yellow */
+      background: rgba(233,187,16,0.2); /* Yellow overlay with 20% opacity */
       pointer-events: none;
       z-index: 1;
     }
@@ -306,7 +310,7 @@
       <img src="logo.png" alt="James & Ben Enterprises Logo">
     </div>
     <h1>Ryans Porridge Flours</h1>
-    <p>James &amp; Ben Enterprises</p>
+    <p>James & Ben Enterprises</p>
   </header>
   
   <!-- Navigation -->
@@ -328,7 +332,7 @@
           <h3>RYANS INSTANT PORRIDGE</h3>
           <p><em>"Quick, Nutritious and Delicious"</em></p>
           <p>Ready-to-use porridge blend for fast, wholesome meals.</p>
-          <img src="instant-porridge.jpg" alt="Instant Porridge">
+          <img src="instant-porridge.jpg" alt="Ryan's Instant Porridge">
           <div class="see-recipes-text">
             <a href="recipes.html">See Recipes</a>
           </div>
@@ -337,7 +341,7 @@
           <h3>RYAN’S HIGH FIBRE PORRIDGE FLOUR</h3>
           <p><em>"High fiber, better digestion!"</em></p>
           <p>Crafted for a fiber-rich diet that supports digestion.</p>
-          <img src="high-fiber-porridge.jpg" alt="High Fibre Porridge Flour">
+          <img src="high-fiber-porridge.jpg" alt="Ryan's High Fibre Porridge Flour">
           <div class="see-recipes-text">
             <a href="recipes.html">See Recipes</a>
           </div>
@@ -347,6 +351,7 @@
     
     <!-- Recipes Section on Main Page -->
     <section id="recipes">
+      <div class="yellow-overlay"></div>
       <h2>Recipes</h2>
       <div class="main-recipes">
         <div class="recipe-card">
@@ -386,9 +391,9 @@
       <h2>About Us</h2>
       <p>
         At James &amp; Ben, we are committed to quality, innovation, and excellence in nutrition.
-        Founded in 2018, our mission is to deliver premium porridge flours that nourish and inspire.
-        We work tirelessly to ensure every product reflects our dedication to health, sustainability,
-        and a passion for excellence.
+        Founded in 2018 , our mission is to deliver premium porridge flours that
+        nourish and inspire. We work tirelessly to ensure every product reflects our dedication to health,
+        sustainability, and a passion for excellence.
       </p>
     </section>
     
