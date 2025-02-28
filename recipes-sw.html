@@ -3,150 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Unga wa Porridge wa Ryans | Kampuni ya James & Ben</title>
+  <title>Mapishi ya Ziada | Unga wa Uji wa Ryan</title>
   <style>
-    /* Global Reset & Base Styles */
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
-      background: #fafafa;
+      background: #ffffff;
       color: #4a200d;
       line-height: 1.6;
-      scroll-behavior: smooth;
     }
-    /* (Optional) Global Page Overlay */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(233,187,16,0.1);
-      z-index: -1;
-    }
-    /* Header with Background & Overlay */
     header {
-      position: relative;
+      background: url('recipes-header.jpg') center/cover no-repeat;
+      padding: 80px 20px;
       text-align: center;
-      padding: 20px 10px;
       color: white;
-      background: url('header-bg.jpg') center/cover no-repeat;
+      position: relative;
     }
     header::after {
       content: "";
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(46,108,81,0.6);
-      z-index: 0;
-    }
-    .logo-container {
-      position: relative;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 60px;
+      background: linear-gradient(to bottom, transparent, #ffffff);
+      pointer-events: none;
       z-index: 1;
-      display: inline-block;
-      background: white;
-      padding: 5px;
-      border-radius: 5px;
-      margin-bottom: 10px;
     }
-    .logo-container img { max-height: 80px; display: block; }
-    header h1 {
-      position: relative;
-      z-index: 1;
-      font-size: 2.8em;
-      color: #ffdc00;
-      margin: 10px 0 5px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    }
-    header p {
-      position: relative;
-      z-index: 1;
-      font-size: 1.2em;
-      margin: 0;
-      color: #fff;
-      letter-spacing: 1px;
-    }
-    /* Language Selector */
-    nav.language {
-      background: #e9bb10;
-      padding: 10px;
-      text-align: right;
-    }
-    nav.language a {
-      margin-left: 10px;
-      text-decoration: none;
-      color: #4a200d;
-      font-weight: bold;
-    }
-    /* Main Navigation */
-    nav.main {
-      background-color: #e9bb10;
-      padding: 10px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    nav.main a {
-      color: #4a200d;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav.main a:hover { color: #2e6c51; }
-    .container { width: 90%; max-width: 1200px; margin: 40px auto; }
-    h2 {
-      color: #e9bb10;
-      margin: 40px 0 20px;
-      font-size: 2em;
-      text-align: center;
-      position: relative;
-    }
-    h2::after {
-      content: "";
+    .back-arrow {
       position: absolute;
-      width: 50px;
-      height: 3px;
-      background: #e9bb10;
-      bottom: -5px;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 20px;
+      top: 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 1.4em;
+      z-index: 2;
     }
-    /* Additional sections (Products, Recipes, About, Team, Contact) follow the same layout as the English version */
+    header h1 {
+      font-size: 3.2em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 2;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      color: #2e6c51;
+      margin: 30px 0 20px;
+      border-bottom: 2px solid #e9bb10;
+      padding-bottom: 10px;
+      font-size: 2em;
+    }
+    .recipe-card {
+      background: #ffffff;
+      border: 2px solid #e9bb10;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .recipe-card img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .recipe-content {
+      flex: 1;
+    }
+    .recipe-content ol { margin-left: 20px; }
+    .learn-more {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #2e6c51;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .learn-more:hover { background: #4a200d; }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.6em; }
+      .recipe-card { flex-direction: column; align-items: center; text-align: center; }
+      .recipe-content ol { margin-left: 0; }
+    }
   </style>
 </head>
 <body>
-  <!-- Language Selector -->
-  <nav class="language">
-    <a href="index.html">Kiingereza</a>
-    <a href="index-sw.html">Kiswahili</a>
-  </nav>
-  <!-- Main Navigation -->
-  <nav class="main">
-    <a href="#products">Bidhaa</a>
-    <a href="#recipes">Mapishi</a>
-    <a href="#about">Kuhusu Sisi</a>
-    <a href="#profiles">Timu Yetu</a>
-    <a href="#contact">Wasiliana</a>
-  </nav>
-  <!-- Header -->
   <header>
-    <div class="logo-container">
-      <img src="logo.png" alt="Alama ya Kampuni ya James & Ben">
-    </div>
-    <h1>Unga wa Porridge wa Ryans</h1>
-    <p>Kampuni ya James & Ben</p>
+    <a href="index.html" class="back-arrow">&larr; Rudi</a>
+    <h1>Mapishi ya Ziada</h1>
   </header>
   <div class="container">
-    <!-- Example Section: About Us -->
-    <section id="about">
-      <h2>Kuhusu Sisi</h2>
-      <p>Dhamira yetu ni kuwasilisha unga bora wa porridge unaolisha na kuhamasisha.</p>
-    </section>
-    <!-- Other sections (Products, Mapishi, Timu, Wasiliana) go here -->
+    <h2>Mapishi Muhimu</h2>
+    <div class="recipe-card">
+      <img src="instant-porridge.jpg" alt="Uji wa Haraka">
+      <div class="recipe-content">
+        <h3>Uji wa Haraka wa Ryan</h3>
+        <ol>
+          <li>Ongeza vijiko 4 vya unga kwenye kikombe au bakuli.</li>
+          <li>Ongeza maji baridi polepole hadi upate uji laini.</li>
+          <li>Mimina maji ya moto au maziwa huku ukikoroga hadi upate unene unaotaka.</li>
+          <li>Ongeza kitamu cha chaguo lako.</li>
+          <li>Uji wako uko tayari!</li>
+        </ol>
+      </div>
+    </div>
+    <h2>Tofauti za Ladha</h2>
+    <div class="recipe-card">
+      <img src="lemorific.jpg" alt="Lemorific">
+      <div class="recipe-content">
+        <h3>Lemorific (Ladha ya Ndimu)</h3>
+        <ol>
+          <li>Tayarisha uji wako wa msingi.</li>
+          <li>Ongeza nusu kijiko cha asidi ya citric na kijiko 1 cha maji ya ndimu.</li>
+          <li>Koroga na kuongeza asali au sukari.</li>
+          <li>Furahia ukiwa moto.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="recipe-card">
+      <img src="coconutrific.jpg" alt="Coconutrific">
+      <div class="recipe-content">
+        <h3>Coconutrific (Nazi Tamu)</h3>
+        <ol>
+          <li>Tayarisha uji wako wa msingi.</li>
+          <li>Ongeza kijiko 1 cha maziwa ya nazi au nazi iliyokunwa.</li>
+          <li>Unaweza kuongeza maziwa ikiwa unapenda.</li>
+          <li>Furahia ukiwa moto.</li>
+        </ol>
+      </div>
+    </div>
+    <a href="index.html" class="learn-more">Rudi Nyumbani</a>
   </div>
-  <footer>
-    <p>&copy; 2025 Kampuni ya James & Ben. Haki zote zimehifadhiwa.</p>
-  </footer>
 </body>
 </html>
